@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Intro VueJs</title>
+     <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+    
+</head>
+<body>
+
+
+<div id="app">
+    <div class="container">
+        <h4>Intro VueJS</h4>
+        <br>
+        <div class="row">
+            <div class="col s2 offset-s2">
+                <button class="waves-effect waves-light btn  green accent-4" v-on:click="Add()">Agregar 1</button>
+            </div>
+            <div class="col s1">
+                <h3 style="margin:0px">{{contador}}</h3>
+            </div>
+            <div class="col s2">
+                <button class="waves-effect waves-light btn red darken-4" v-on:click="Decremento()">Restar 1 </button>
+            </div>
+        </div>
+        <br>
+
+        <div class="row">
+            <div class="col s2 offset-2">
+                <input type="number" placeholder="Número A" v-model="numeroA">
+            </div>
+            <div class="col s2">
+                <input type="number" placeholder="Número B" v-model="numeroB">
+            </div>
+            <div class="col s3">
+                <h5>Resultado: {{parseFloat(numeroA) + parseFloat(numeroB) }}</h5>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+    
+<script src="https://unpkg.com/vue"></script>
+<script>
+    var app = new Vue({
+
+        el:'#app',
+        data:{
+            saludo: 'Hola Mundo',
+            contador: 0,
+            numeroA:0,
+            numeroB:0
+        },
+        methods:{
+            Add: function(){
+                this.contador++;
+            },
+            Decremento(){
+                this.contador--;
+            }
+
+        }
+
+    });
+</script>
+
+</body>
+</html>
